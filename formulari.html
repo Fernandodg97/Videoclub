@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Videoclub</title>
+    <script type="module" src="./dist/formulari.js"></script>
+    <link rel="stylesheet" href="formulari.css" />
+  </head>
+
+  <body>
+    <div class="background-image"></div>
+
+    <section id="titulo">
+      <h1>Videoclub</h1>
+    </section>
+
+    <section id="formulari">
+      <h2>Formulari de registre de clients</h2>
+      <form id="mainForm" action="index.html" method="GET">
+        <fieldset>
+          <legend>Dades Personals</legend>
+
+          <label for="nom">Nom i Cognoms <strong>*</strong></label>
+          <input
+            type="text"
+            name="nom"
+            id="nom"
+            maxlength="50"
+            autofocus
+            required
+          />
+
+          <label for="dataNaixement"
+            >Data de Naixement <strong>*</strong></label
+          >
+          <input type="date" name="dataNaixement" id="dataNaixement" required />
+
+          <label for="email">Email <strong>*</strong></label>
+          <input type="text" name="email" id="email" maxlength="50" required />
+
+          <label for="contrasena">Contraseña <strong>*</strong></label>
+          <input type="password" name="contrasena" id="contrasena" required />
+        </fieldset>
+
+        <fieldset>
+          <legend>Favorits</legend>
+
+          <label for="pelicules">Pel·lícula favorita:</label>
+          <input
+            list="pelicules"
+            name="pelicula"
+            id="pelicula"
+            autocomplete="on"
+          />
+          <datalist id="pelicules">
+            <!-- Ciència-ficció -->
+            <option value="Interstellar"></option>
+            <option value="Blade Runner 2049"></option>
+            <option value="The Matrix"></option>
+
+            <!-- Animació -->
+            <option value="Toy Story"></option>
+            <option value="El Rei Lleó"></option>
+            <option value="El Viatge de Chihiro"></option>
+
+            <!-- Drama -->
+            <option value="Cadena Perpètua"></option>
+            <option value="Forrest Gump"></option>
+            <option value="La Llista de Schindler"></option>
+
+            <!-- Terror -->
+            <option value="El Resplendor"></option>
+            <option value="It"></option>
+            <option value="Hereditary"></option>
+          </datalist>
+
+          <label>Quin gènere de pel·lícula prefereixes?</label>
+          <div class="checkbox-group">
+            <input
+              type="checkbox"
+              name="genere"
+              value="ciencia-ficcio"
+              id="ciencia-ficcio"
+            />
+            <label for="ciencia-ficcio">Ciència-ficció</label>
+
+            <input
+              type="checkbox"
+              name="genere"
+              value="animacio"
+              id="animacio"
+            />
+            <label for="animacio">Animació</label>
+
+            <input type="checkbox" name="genere" value="drama" id="drama" />
+            <label for="drama">Drama</label>
+
+            <input type="checkbox" name="genere" value="terror" id="terror" />
+            <label for="terror">Terror</label>
+
+            <input type="checkbox" name="genere" value="comedia" id="comedia" />
+            <label for="comedia">Comèdia</label>
+
+            <input
+              type="checkbox"
+              name="genere"
+              value="aventura"
+              id="aventura"
+            />
+            <label for="aventura">Aventura</label>
+
+            <input type="checkbox" name="genere" value="accio" id="accio" />
+            <label for="accio">Acció</label>
+
+            <input
+              type="checkbox"
+              name="genere"
+              value="romantic"
+              id="romantic"
+            />
+            <label for="romantic">Romàntic</label>
+          </div>
+        </fieldset>
+        <div class="buttons">
+          <div class="buttonsCenter">
+            <input type="submit" value="Enviar" />
+            <button type="reset">Restablir</button>
+          </div>
+        </div>
+        <div class="texto">
+          <p><strong>* Obligatoris </strong></p>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>
