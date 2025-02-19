@@ -24,7 +24,7 @@ emailInput.addEventListener("input", () => {
     mensajeError.textContent = "";
   } else {
     // Si no es válido, mostrar error
-    mensajeError.textContent = "Por favor, ingrese un email válido.";
+    mensajeError.textContent = "Si us plau, ingressi un email vàlid.";
   }
 });
 
@@ -61,7 +61,7 @@ contrasenaInput.addEventListener("input", () => {
   } else {
     // Mensaje de error si no cumple los requisitos
     mensajeErrorContrasena.textContent =
-      "La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula y un número.";
+      "La contrasenya ha de tenir almenys 8 caràcters, una majúscula, una minúscula i un número.";
   }
 });
 
