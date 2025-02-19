@@ -1,6 +1,3 @@
-// Importa la clase cliente
-import Cliente from "./Cliente.js";
-
 // Función para validar el email
 function esEmailValido(email: string): boolean {
   // Expresión regular que verifica que el email tenga un formato correcto (con '@' y '.')
@@ -12,7 +9,7 @@ function esEmailValido(email: string): boolean {
 const emailInput: HTMLInputElement = document.getElementById("email") as HTMLInputElement;
 
 // Crear un elemento para mostrar mensajes de error
-const mensajeError: HTMLParagraphElement = document.createElement("p");
+const mensajeError: HTMLParagraphElement = document.createElement("p") as HTMLParagraphElement;
 mensajeError.style.color = "red"; // Estilo del mensaje en rojo
 
 // Insertar el mensaje de error después del campo de email
@@ -38,7 +35,7 @@ function esContrasenaValida(contrasena: string): boolean {
   // - Una letra mayúscula
   // - Un número
   // - 8 o más caracteres
-  const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+  const regex: RegExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
   // Devuelve true si la contraseña es válida, false si no lo es
   return regex.test(contrasena);
 }
@@ -47,7 +44,7 @@ function esContrasenaValida(contrasena: string): boolean {
 const contrasenaInput: HTMLInputElement = document.getElementById("contrasena") as HTMLInputElement;
 
 // Crear un elemento para mostrar mensajes de error de la contraseña
-const mensajeErrorContrasena: HTMLParagraphElement = document.createElement("p");
+const mensajeErrorContrasena: HTMLParagraphElement = document.createElement("p") as HTMLParagraphElement;
 // Estilo del mensaje en rojo
 mensajeErrorContrasena.style.color = "red";
 
@@ -75,7 +72,7 @@ const formulario: HTMLFormElement = document.getElementById("mainForm") as HTMLF
 window.addEventListener("submit", submitGET);
 
 // Crear un elemento para mostrar el mensaje de error general (email y contraseña no válidos)
-const mensajeErrorGeneral: HTMLParagraphElement = document.createElement("p");
+const mensajeErrorGeneral: HTMLParagraphElement = document.createElement("p") as HTMLParagraphElement;
 // Estilo del mensaje en rojo
 mensajeErrorGeneral.style.color = "red";
 // Espaciado

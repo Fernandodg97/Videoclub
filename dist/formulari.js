@@ -1,3 +1,4 @@
+"use strict";
 // Función para validar el email
 function esEmailValido(email) {
     // Expresión regular que verifica que el email tenga un formato correcto (con '@' y '.')
@@ -86,5 +87,4 @@ function submitGET(e) {
         mensajeErrorGeneral.textContent = "";
     }
 }
-export {};
 //# sourceMappingURL=formulari.js.map

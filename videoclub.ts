@@ -9,13 +9,13 @@ const clients: Cliente[] = [
 ];
 
 // Obtener los clientes guardados en el localStorage o crear uno vacío si no hay
-const clientesGuardados = JSON.parse(localStorage.getItem("clientes") || "[]");
+const clientesGuardados: Cliente[] = JSON.parse(localStorage.getItem("clientes") || "[]");
 // Verificar qué datos se recuperan
 console.log("Clientes recuperados de localStorage:", clientesGuardados);
 
 // Mostrar los clientes guardados o los predeterminados al cargar la página
 function mostrarClients(): void {
-  const clientList: HTMLElement = document.getElementById("clientList")!;
+  const clientList: HTMLElement = document.getElementById("clientList")! as HTMLElement;
   
   // Limpiar la lista de clientes antes de agregar los nuevos
   clientList.innerHTML = "";
@@ -71,7 +71,7 @@ function afegirProducte(productName?: string, platform?: string): void {
   input.value = ""; // Limpiar el input después de agregar
 
   if (value.includes(",")) {
-    const [gameName, gamePlatform] = value.split(",").map(v => v.trim());
+    const [gameName, gamePlatform]: string[] = value.split(",").map(v => v.trim());
     if (gameName && gamePlatform) {
       games.push(`${gameName} (${gamePlatform})`);
     }
@@ -82,18 +82,18 @@ function afegirProducte(productName?: string, platform?: string): void {
 
 // Función para escribir en la tabla HTML
 function escriureTaula(titol: string, objectes: string[], objectes2?: string[]) {
-  const tableContainer: HTMLElement = document.getElementById("tableContainer")!;
+  const tableContainer: HTMLElement = document.getElementById("tableContainer")! as HTMLElement;
   tableContainer.innerHTML = "";
 
-  const table: HTMLTableElement = document.createElement("table");
-  const header: HTMLTableRowElement = document.createElement("tr");
+  const table: HTMLTableElement = document.createElement("table") as HTMLTableElement;
+  const header: HTMLTableRowElement = document.createElement("tr") as HTMLTableRowElement;
   header.innerHTML = objectes2 ? "<th>Pel·lícules</th><th>Videojocs</th>" : `<th>${titol}</th>`;
   table.appendChild(header);
 
   const maxLength: number = Math.max(objectes.length, objectes2 ? objectes2.length : 0);
 
   for (let i = 0; i < maxLength; i++) {
-    const row: HTMLTableRowElement = document.createElement("tr");
+    const row: HTMLTableRowElement = document.createElement("tr") as HTMLTableRowElement;
     row.innerHTML = objectes2 ? `<td>${objectes[i] || ""}</td><td>${objectes2[i] || ""}</td>` : `<td>${objectes[i]}</td>`;
     table.appendChild(row);
   }
@@ -122,7 +122,7 @@ export function anarFormulari(): void {
 }
 
 //Funció per mostrar les respostes quan arriben per GET
-function mostrarRespostesGET() {
+function mostrarRespostesGET(): void {
   // Obtener los parámetros de la URL
   const urlParams: URLSearchParams = new URLSearchParams(window.location.search);
 
